@@ -6,11 +6,16 @@ app = Flask(__name__)
 def hello_world(usuario, idade):
     print(idade)
     print(type(idade))
-    return f"<p>Ola mundo! usuario:{usuario.upper()}!</p>"
+    return {
+        'Usuario': usuario,
+        'Idade': idade,
+    }
 
 @app.route("/bemvindo")
 def bem_vindo():
-    return "<p>Bem, vindo!</p>"
+    return {
+        'message': 'Ola Mundo'
+    }
 
 
 @app.route('/projects/')
