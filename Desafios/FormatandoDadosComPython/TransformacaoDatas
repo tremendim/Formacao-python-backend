@@ -1,0 +1,18 @@
+
+entrada = input()
+
+
+def transformar_datas(datas):
+
+    datas_lista = datas.split(';')
+    
+    datas_transformadas = []
+    
+    for data in datas_lista:
+        dia, mes, ano = data.split('-')
+        nova_data = f"{ano}/{mes}/{dia}"
+        datas_transformadas.append(nova_data)
+    
+    return datas_transformadas
+    
+print(transformar_datas(entrada))
