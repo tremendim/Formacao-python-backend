@@ -15,3 +15,4 @@ def login():
 
     access_token = create_access_token(identity=username)
     return {'access_token':access_token}
+
