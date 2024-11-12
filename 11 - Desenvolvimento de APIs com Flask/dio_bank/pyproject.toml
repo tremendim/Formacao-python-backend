@@ -11,7 +11,13 @@ flask = "*"
 flask-sqlalchemy = "*"
 flask-jwt-extended = "*"
 flask-migrate = "*"
+pytest = "*"
 
+ 
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [   "tests",    "integration",]
 
 [build-system]
 requires = ["poetry-core"]
