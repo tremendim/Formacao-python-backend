@@ -12,6 +12,7 @@ flask-sqlalchemy = "*"
 flask-jwt-extended = "*"
 flask-migrate = "*"
 pytest = "*"
+pytest-mock = "*"
 
  
 [tool.pytest.ini_options]
