@@ -22,16 +22,18 @@ def _create_user():
 
 def _list_users():
     query = db.select(User)
-    results = db.session.execute(query).scalars()
+    users = db.session.execute(query).scalars()
     return [
-        {'id':result.id,
-          'username': result.username,
-            'role_id': result.role_id,
+        {
+        'id':user.id,
+          'username': user.username,
+            'role_id': user.role_id,
             'role': {
-                'id': result.role.id, 
-                'name':result.role.name,}
+                'id': user.role.id, 
+                'name':user.role.name,
+            },
         }
-        for result in results 
+        for user in users
     ]
 
 @app.route('/', methods=['GET','POST'])

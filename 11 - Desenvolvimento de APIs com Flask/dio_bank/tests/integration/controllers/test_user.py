@@ -31,7 +31,37 @@ def test_get_user_not_found(client):
 
     #Then
     assert response.status_code == HTTPStatus.NOT_FOUND
-    #assert response.json == {"id": user.id, "username": user.username}
 
+# def test_list_users(client):
+
+#     role = Role(name='admin')
+#     db.session.add(role)
+#     db.session.commit()
+
+
+#     user = User(username='john-doe', password='test', role_id=role.id)
+#     db.session.add(user)
+#     db.session.commit()
+
+#     response= client.post('/auth/login', json={'username': user.username, 'password':user.password})
+#     access_token = response.json['access_token']
+
+#     #When
+#     response = client.get('/users/', headers={'Authorization': f"Bearer{access_token}"})
+
+#     # #assert response.status_code == HTTPStatus.OK
+#     # assert response.json == { 
+#     #     "users": [
+#     #         {
+#     #             "id": user.id,
+#     #             "username": user.username,
+#     #             "role":{
+#     #                 "id": user.role.id,
+#     #                 "name": user.role.name,
+#     #             },
+#     #         }
+#     #     ]
+#     #     }
+        
 
 
